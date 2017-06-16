@@ -3,7 +3,7 @@
 var FPS = 30;                   // フレームレート
 var SCREEN_SIZE_X = window.innerWidth;     // 画面サイズ(幅)
 var SCREEN_SIZE_Y = window.innerHeight;    // 画面サイズ(高さ)
-var NUM_BOIDS = 1000;            // ボイドの数
+var NUM_BOIDS = 100;            // ボイドの数
 var BOID_SIZE = 5;              // ボイドの大きさ
 var MAX_SPEED = 7;              // ボイドの最大速度
 var canvas = document.getElementById('world');
