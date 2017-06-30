@@ -3,8 +3,8 @@
 var FPS = 30;                   // フレームレート
 var SCREEN_SIZE_X = window.innerWidth;     // 画面サイズ(幅)
 var SCREEN_SIZE_Y = window.innerHeight;    // 画面サイズ(高さ)
-var NUM_BOIDS = 100;            // ボイドの数
-var BOID_SIZE = 5;              // ボイドの大きさ
+var NUM_BOIDS = 10;            // ボイドの数
+var BOID_SIZE = 15;              // ボイドの大きさ
 var MAX_SPEED = 7;              // ボイドの最大速度
 var canvas = document.getElementById('world');
 var ctx = canvas.getContext('2d');
@@ -77,7 +77,14 @@ var draw = function() {
   * ルール1: ボイドは近くに存在する群れの中心に向かおうとする
   */
  var rule1 = function(index) {
-     var c = {x: 0, y:0};        // 自分を除いた群れの真ん中
+     // var pixelx = clientX;
+     // var pixely = clientY;
+     // document.addEventListener('mousemove', test);
+
+     //  function test(e) {
+     //    ctx.fillRect( e.clientX, e.clientY, 50, 50);
+     //  }
+     var c = {x:0, y:0};        // 自分を除いた群れの真ん中
      for (var i=0,len=boids.length; i<len; ++i) {
          if (i != index) {
              c.x += boids[i].x;
@@ -96,7 +103,7 @@ var draw = function() {
      for (var i=0,len=boids.length; i<len; ++i) {
          if (i != index) {
              var d = getDistance(boids[i], boids[index]); // ボイド間の距離
-             if (d < 5) {
+             if (d < 30) {
                  boids[index].vx -= boids[i].x - boids[index].x;
                  boids[index].vy -= boids[i].y - boids[index].y;
              }
@@ -137,6 +144,7 @@ var draw = function() {
  function start() {
   MAX_SPEED = 7;
  }
+
 
  /**
   * 画面サイズのスクリプト
