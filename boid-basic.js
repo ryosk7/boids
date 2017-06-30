@@ -130,6 +130,14 @@ var draw = function() {
      return Math.sqrt(x*x + y*y);
  };
 
+ function stop() {
+  MAX_SPEED = 0;
+ }
+
+ function start() {
+  MAX_SPEED = 7;
+ }
+
  /**
   * 画面サイズのスクリプト
   */
