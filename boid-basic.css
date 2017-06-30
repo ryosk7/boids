@@ -16,3 +16,15 @@
   top: 0;
   left: 0;
 }
+
+.main #start {
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+
+.main #stop {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
